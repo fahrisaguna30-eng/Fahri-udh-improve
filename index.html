@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Fahri</title>
+  <style>
+    :root {
+      --bg: linear-gradient(to right, #1e3c72, #2a5298);
+      --text: white;
+      --card-bg: rgba(255, 255, 255, 0.1);
+      --button-bg: #ffcc00;
+      --button-hover: #ffaa00;
+    }
+
+    body.light {
+      --bg: linear-gradient(to right, #f9f9f9, #e0e0e0);
+      --text: #222;
+      --card-bg: rgba(0, 0, 0, 0.05);
+      --button-bg: #1e3c72;
+      --button-hover: #2a5298;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      text-align: center;
+      padding: 30px;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 20px;
+      max-width: 400px;
+      margin: 40px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid white;
+      transition: transform 0.3s;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+    }
+
+    button {
+      background: var(--button-bg);
+      color: black;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-weight: bold;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: var(--button-hover);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="https://i.ibb.co/9tnYx1J/avatar.png" alt="Foto Profil">
+    <h1>Fahri</h1>
+    <p>👋 Halo! Aku pelajar kelas 8 yang lagi belajar main epep.</p>
+    <p>💻 Hobi: Main game dan olahraga.</p>
+    <button onclick="alert('Semangat terus belajar main epep, bro! 🚀')">Klik Aku</button>
+    <br><br>
+    <button onclick="gantiTema()">🌗 Ganti Tema</button>
+    <br><br>
+    <button onclick="putarMusik()">🎵 Putar Musik</button>
+    <button onclick="pauseMusik()">⏸️ Pause</button>
+  </div>
+
+  <audio id="musik" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const musik = document.getElementById("musik");
+
+    function gantiTema() {
+      document.body.classList.toggle("light");
+    }
+
+    function putarMusik() {
+      musik.play();
+    }
+
+    function pauseMusik() {
+      musik.pause();
+    }
+  </script>
+</body>
+</html>
